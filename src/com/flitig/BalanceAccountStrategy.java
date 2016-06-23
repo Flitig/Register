@@ -5,8 +5,6 @@ package com.flitig;
  */
 public class BalanceAccountStrategy implements IAccountTypeStrategy {
 
-    // Specification: Utgifts- och inkomstkonton däremot minskar när de är to:- konton.
-
     @Override
     public int TransactFrom(int balance, int amount) {
         return balance + amount;

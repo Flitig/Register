@@ -5,8 +5,6 @@ package com.flitig;
  */
 public class CheckAccountStrategy implements IAccountTypeStrategy {
 
-    // Specification: Saldot för check-konton ökar när kontot är ett to:-konto
-
     @Override
     public int TransactFrom(int balance, int amount) {
         return balance - amount;
