@@ -15,7 +15,6 @@ public class TransactionTests {
 
         // Specification: Saldot för check-konton ökar när kontot är ett to:-konto
 
-
         IAccount account = new Account("Test");
         account.SetAccountTypeStrategy(new CheckAccountStrategy());
 
