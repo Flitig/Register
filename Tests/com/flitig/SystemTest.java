@@ -2,6 +2,9 @@ package com.flitig;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.TreeMap;
+
 import static org.junit.Assert.assertArrayEquals;
 
 /**
@@ -10,7 +13,7 @@ import static org.junit.Assert.assertArrayEquals;
 public class SystemTest {
     @Test
     public void TestsEmptyInput() throws Exception {
-        IRegister register = new Register();
+        IRegister register = new Register(new AccountBuilder(), new TreeMap<>());
         String[] input = new String[]{};
         String[] expected = new String[]{"(no accounts)"};
         String[] actual = register.Run(input);
@@ -21,7 +24,7 @@ public class SystemTest {
 
     @Test
     public void TestsAdding() throws Exception {
-        IRegister register = new Register();
+        IRegister register = new Register(new AccountBuilder(), new TreeMap<>());
         String[] input = new String[]{
                 "add check account Bankkonto",
                 "add expense account Livsmedel",
@@ -41,7 +44,7 @@ public class SystemTest {
 
     @Test
     public void TestsAddingAndTransacting() throws Exception {
-        IRegister register = new Register();
+        IRegister register = new Register(new AccountBuilder(), new TreeMap<>());
         String[] input = new String[]{
                 "add check account Bankkonto",
                 "add expense account Livsmedel",
