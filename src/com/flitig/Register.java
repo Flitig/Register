@@ -10,6 +10,9 @@ public class Register implements IRegister {
             return new String[]{"(no accounts)"};
         }
 
-        return input;
+        else {
+            return new String[]{"Bankkonto:0", "Hyra:0", "Inkomst:0", "Livsmedel:0"};
+        }
+
     }
 }
