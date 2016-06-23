@@ -65,8 +65,26 @@ public class SystemTest {
 
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void TestsCorrectingTransaction() throws Exception {
+        IRegister register = new Register(new AccountBuilder(), new TreeMap<>());
+        String[] input = new String[]{
+                "add check account Bankkonto",
+                "add expense account Livsmedel",
+                "add expense account Hyra",
+                "add income account Inkomst",
+                "transaction from:Inkomst   to:Bankkonto 1000",
+                "transaction from:Bankkonto to:Hyra      100",
+                "transaction from:Hyra      to:Livsmedel 100",
+        };
+        String[] expected = new String[]{
+                "Bankkonto:900",
+                "Hyra:0",
+                "Inkomst:1000",
+                "Livsmedel:-100"};
+        String[] actual = register.Run(input);
+
+        assertArrayEquals(expected, actual);
+    }
 }
-
-
-
-
