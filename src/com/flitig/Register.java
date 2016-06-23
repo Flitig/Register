@@ -19,7 +19,6 @@ public class Register implements IRegister {
         if (input.length == 0) {
             return new String[]{"(no accounts)"};
         } else {
-            // dela upp och parsa input
             String[] tmp;
 
             for (String s : input) {
@@ -33,11 +32,12 @@ public class Register implements IRegister {
                     IAccount fromAccount = accounts.get(fromAccountName);
                     IAccount toAccount = accounts.get(toAccountName);
                     int amount = Integer.parseInt(tmp[3]);
+
                     Transact(fromAccount, toAccount, amount);
                 }
             }
 
-            String[] array = accounts.values().stream().map(a -> a.toString()).toArray(size -> new String[size]);
+            String[] array = accounts.values().stream().map(Object::toString).toArray(String[]::new);
             return array;
         }
 
