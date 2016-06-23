@@ -2,7 +2,6 @@ package com.flitig;
 
 import org.junit.Test;
 
-import java.util.HashMap;
 import java.util.TreeMap;
 
 import static org.junit.Assert.assertArrayEquals;
