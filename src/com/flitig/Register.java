@@ -23,7 +23,7 @@ public class Register implements IRegister {
             String[] tmp;
 
             for (String s : input) {
-                tmp = s.split("\\s+");
+                tmp = s.split("\\s+", 4);
                 if (tmp[0].equals("add")) {
                     IAccount account = accountBuilder.CreateAccount(tmp[1], tmp[3]);
                     accounts.put(tmp[3], account);
