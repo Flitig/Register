@@ -14,6 +14,11 @@ public class Account implements IAccount {
     }
 
     @Override
+    public int getBalance() {
+        return balance;
+    }
+
+    @Override
     public void SetAccountTypeStrategy(IAccountTypeStrategy accountTypeStrategy) {
         this.accountTypeStrategy = accountTypeStrategy;
     }
