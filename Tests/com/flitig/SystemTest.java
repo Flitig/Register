@@ -87,4 +87,20 @@ public class SystemTest {
 
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void TestsAddingAccountWithLongName() throws Exception {
+        IRegister register = new Register(new AccountBuilder(), new TreeMap<>());
+        String[] input = new String[]{
+                "add check account Bankkonto",
+                "add expense account Livsmedel och luncher på stan"
+        };
+        String[] expected = new String[]{
+                "Bankkonto:0",
+                "Livsmedel och lunche:0"
+        };
+        String[] actual = register.Run(input);
+
+        assertArrayEquals(expected, actual);
+    }
 }
