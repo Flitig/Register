@@ -9,7 +9,7 @@ import static org.junit.Assert.assertArrayEquals;
 /**
  * Created by Flitig on 2016-06-23.
  */
-public class SystemTest {
+public class SystemTests {
     @Test
     public void TestsEmptyInput() throws Exception {
         IRegister register = new Register(new AccountBuilder(), new TreeMap<>());
