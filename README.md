@@ -2,11 +2,14 @@
 
 Run by typing the following in terminal window:
 
-cat <input file> | java -classpath <classpath> com.flitig.Main > <output file>
+``` bash
+cat (input file) | java -classpath (path to Main.class) com.flitig.Main > (output file)
+```
 
 Takes the contents of a piped textfile on stdin and outputs result on stdout. Program requires well formated input and doesn't handle duplicates. This is according to specification.
 
 Example of input.txt:
+
 ```
 add check account Bankkonto
 add expense account Livsmedel
